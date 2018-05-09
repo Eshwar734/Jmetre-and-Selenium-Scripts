@@ -1,0 +1,100 @@
+package com.Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class LoginPage {
+	
+	public WebDriver driver;
+
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	// Login
+	@FindBy(id = "email")
+	public WebElement fbEmailorPhone;
+	@FindBy(id = "pass")
+	public WebElement fbPassword;
+	@FindBy(id = "loginbutton")
+	public WebElement fbsubmit;
+	
+	
+	@FindBy(xpath = "html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div[2]/div/form/div/div/div/div/input[1]")
+	public WebElement searchBar;
+	
+	
+
+	public void fbLogin_Test() {
+		fbEmailorPhone.sendKeys("9550875404");
+		fbPassword.sendKeys("babydolly@123");
+		fbsubmit.click();
+	}
+	
+	public void searchOperation(){
+		searchBar.clear();
+		searchBar.sendKeys("arun");
+	}
+	
+////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	@FindBy(xpath = "//*[@id='identifierId']")
+	public WebElement Emailorphone;
+
+	@FindBy(xpath = "//*[@id='identifierNext']/content")
+	public WebElement identifierNext;
+
+	@FindBy(xpath = "//*[@id='password']/div[1]/div/div[1]/input")
+	public WebElement Password;
+
+	@FindBy(xpath = "//*[@id='passwordNext']/content")
+	public WebElement passwordNext;
+	
+	@FindBy(xpath = "//*[@id='gbqfq']")
+	public WebElement SearchBox;
+	
+	@FindBy(xpath = "html/body/div[7]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div/div/div[1]/div/div")
+	public WebElement compose;
+
+	
+	
+	@FindBy(xpath = "html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[3]/table/tbody/tr[1]/td[1]/div/div[5]/div[1]/div[1]/div[2]")
+	public WebElement PrimaryText;
+	
+	
+	@FindBy(xpath = "html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[6]/div/div[1]/div[2]/div/table/tbody/tr[1]/td[5]")
+	public WebElement ChckBox;
+
+	@FindBy(xpath = "//*[@id=':5']/div/div[1]/div[1]/div/div/div[2]/div[3]")
+	public WebElement DeleteBtn;
+
+	public void XpathCases(WebDriverWait wait) throws InterruptedException {
+		Emailorphone.sendKeys("sinde.venkatesh04");
+		identifierNext.click();
+		Thread.sleep(1000);
+		Password.sendKeys("babydolly@123");
+		passwordNext.click();
+
+	}
+	
+	
+	public void SearchBoxOperation(WebDriverWait wait){
+		wait.until(ExpectedConditions.visibilityOf(SearchBox));
+		SearchBox.clear();
+		SearchBox.sendKeys("test");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

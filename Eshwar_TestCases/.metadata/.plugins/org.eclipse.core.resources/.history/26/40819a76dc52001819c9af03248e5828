@@ -1,0 +1,131 @@
+package com.Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class PageObjects {
+
+	public WebDriver driver;
+
+	public PageObjects(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	// Login
+	@FindBy(id = "email")
+	public WebElement fbEmailorPhone;
+	@FindBy(id = "pass")
+	public WebElement fbPassword;
+	@FindBy(id = "loginbutton")
+	public WebElement fbsubmit;
+
+	@FindBy(xpath = "html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div[2]/div/form/div/div/div/div/input[1]")
+	public WebElement searchBar;
+
+	public void fbLogin_Test() {
+		fbEmailorPhone.sendKeys("fb username");
+		fbPassword.sendKeys("password");
+		fbsubmit.click();
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	@FindBy(xpath = "//*[@id='identifierId']")
+	public WebElement Emailorphone;
+
+	@FindBy(xpath = "//*[@id='identifierNext']/content")
+	public WebElement identifierNext;
+
+	@FindBy(xpath = "//*[@id='password']/div[1]/div/div[1]/input")
+	public WebElement Password;
+
+	@FindBy(xpath = "//*[@id='passwordNext']/content")
+	public WebElement passwordNext;
+
+	public void XpathCases(WebDriverWait wait) throws InterruptedException {
+		Emailorphone.sendKeys("gmail login id");
+		identifierNext.click();
+		Thread.sleep(1000);
+		Password.sendKeys("gmail password");
+		passwordNext.click();
+
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	@FindBy(xpath = "html/body/div[1]/div[1]/header/div[2]/div/div/nav/div[1]/a")
+	public WebElement signInn;
+
+	@FindBy(xpath = "//*[@id='email']")
+	public WebElement email;
+
+	@FindBy(xpath = "//*[@id='passwd']")
+	public WebElement password;
+
+	@FindBy(xpath = "//*[@id='SubmitLogin']")
+	public WebElement SubmitLogin;
+
+	public void Sign(WebDriverWait wait) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(signInn));
+		signInn.click();
+		Thread.sleep(1000);
+		email.clear();
+		email.sendKeys("sinde.venkatesh04@gmail.com");
+		password.clear();
+		password.sendKeys("venkatesh@404");
+		SubmitLogin.click();
+	}
+
+	@FindBy(xpath = "//*[@id='search_query_top']")
+	public WebElement search_query_top;
+
+	@FindBy(xpath = "//*[@id='searchbox']/button")
+	public WebElement searchBtn;
+
+	@FindBy(xpath = "//*[@id='center_column']/p")
+	public WebElement searchResult;
+
+	public void search_query(WebDriverWait wait) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(search_query_top));
+
+		search_query_top.clear();
+		search_query_top.sendKeys("tshirts");
+		searchBtn.click();
+		Thread.sleep(3000);
+		String searchresult = searchResult.getText();
+		System.out.println(searchresult);
+
+	}
+
+	@FindBy(xpath = "//*[@id='block_top_menu']/ul/li[2]/a")
+	public WebElement DressesLink;
+
+	@FindBy(xpath = "//*[@id='categories_block_left']/div/ul/li[1]/a")
+	public WebElement casualLink;
+
+	public void linkTest() throws InterruptedException {
+		DressesLink.click();
+		Thread.sleep(2000);
+		casualLink.click();
+		System.out.println("Links clicked successfully");
+	}
+
+	@FindBy(xpath = "//*[@id='categories_block_left']/div/ul/li[1]/a")
+	public WebElement casualLink_1;
+
+	@FindBy(xpath = "//*[@id='center_column']/ul/li/div/div[2]/div[2]/a[1]/span")
+	public WebElement addToCart;
+
+	public void addItemCart() throws InterruptedException {
+
+		addToCart.click();
+		System.out.println("Added Item in cart successfully");
+	}
+
+}

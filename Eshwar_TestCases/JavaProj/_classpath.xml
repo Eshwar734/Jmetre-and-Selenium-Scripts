@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="D:/framework_jars/ATUTestRecorder_2.1.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/common-lang3.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/dom4j-1.5.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/jxl-2.6.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/poi-3.10.1-20140818.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/poi-examples-3.10.1-20140818.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/poi-excelant-3.10.1-20140818.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/poi-ooxml-3.10.1-20140818.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/poi-ooxml-schemas-3.10.1-20140818.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/poi-scratchpad-3.10.1-20140818.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/saxon-8.7.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/SaxonLiaison.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/selenium-server-standalone-2.53.0.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/slf4j.api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/sqljdbc4-2.0.jar"/>
+	<classpathentry kind="lib" path="D:/framework_jars/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

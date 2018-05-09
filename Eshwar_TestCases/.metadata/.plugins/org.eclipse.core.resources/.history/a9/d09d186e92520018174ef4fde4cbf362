@@ -1,0 +1,30 @@
+package com.TestSuite;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.Config.Constants;
+import com.Pages.LoginPage;
+
+public class fb_Login extends Constants {
+
+	@Test
+	public void fb() {
+
+		System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
+		driver = new ChromeDriver();
+		String URl1 = " https://www.facebook.com/";
+		driver.manage().window().maximize();
+
+		driver.get(URl1);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		LoginPage fb = PageFactory.initElements(driver, LoginPage.class);
+		
+		fb.fbLogin_Test();
+		
+
+	}
+}

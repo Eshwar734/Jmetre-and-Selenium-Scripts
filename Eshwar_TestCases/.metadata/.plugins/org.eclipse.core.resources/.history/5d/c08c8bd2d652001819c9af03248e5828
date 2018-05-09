@@ -1,0 +1,38 @@
+package com.TestSuite;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+import com.Config.Constants;
+import com.Pages.LoginPage;
+
+
+public class Testcase_Two extends Constants{
+	
+	@Test
+	public void TC_2() throws InterruptedException{
+	System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
+	
+	ChromeDriver driver = new ChromeDriver();
+
+	
+	String URl1 = "http://automationpractice.com/";
+	driver.manage().window().maximize();
+
+	driver.get(URl1);
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	
+	LoginPage site = PageFactory.initElements(driver, LoginPage.class);
+	WebDriverWait wait = new WebDriverWait(driver, 60);
+	
+	site.Sign(wait);
+	
+	Thread.sleep(5000);
+	
+	
+	site.search_query(wait);
+}
+}

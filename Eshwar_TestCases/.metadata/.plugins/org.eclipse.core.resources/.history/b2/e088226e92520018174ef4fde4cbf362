@@ -1,0 +1,29 @@
+package com.Pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class LoginPage {
+	public WebDriver driver;
+	
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
+	}
+	//
+	//  Login
+	@FindBy(id = "email")
+	public WebElement fbEmailorPhone;
+	@FindBy(id = "pass")
+	public WebElement fbPassword;
+	@FindBy(className = "u_0_2")
+	public WebElement fbsubmit;
+	
+	public void fbLogin_Test(){
+		fbEmailorPhone.sendKeys("");
+		fbPassword.sendKeys("");
+		fbsubmit.click();
+				
+	}
+
+}

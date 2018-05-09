@@ -1,0 +1,51 @@
+package com.TestSuite;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+/*import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.internal.ProfilesIni;*/
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+import com.Config.Constants;
+import com.Pages.LoginPage;
+
+public class gmail_Actions extends Constants {
+
+	@Test
+	public void xpathActions() throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
+		driver = new ChromeDriver();
+		
+	/*	ProfilesIni allProfiles = new ProfilesIni();
+		FirefoxProfile myProfile = allProfiles.getProfile("default");
+		myProfile.setAcceptUntrustedCertificates(true);
+		myProfile.setAssumeUntrustedCertificateIssuer(true);
+		driver = new FirefoxDriver(myProfile);*/
+		
+		String URl1 = "https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession";
+		driver.manage().window().maximize();
+
+		driver.get(URl1);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		LoginPage gmail = PageFactory.initElements(driver, LoginPage.class);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		
+		gmail.XpathCases(wait);
+		Thread.sleep(10000);
+		gmail.SearchBoxOperation( wait)
+		
+	
+		
+
+		
+
+	}
+}

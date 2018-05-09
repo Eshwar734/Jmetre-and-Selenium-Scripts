@@ -1,0 +1,51 @@
+package config;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import database.Customer;
+import database.CustomerIncome;
+import database.vivifi;
+import utility.ExcelOperations;
+import utility.ScreenShots;
+
+public class Constants {
+
+	protected static String PhoneNumber = "";
+
+
+	
+	protected static ExcelOperations eo=new ExcelOperations();
+	public static  ScreenShots sc=new ScreenShots();
+	
+	// Utilities
+	protected static RemoteWebDriver driver = null;
+	protected static ChromeOptions options = null;
+	public static Logger APP_LOGS = null;
+	
+	public static void initialize() {
+		APP_LOGS = Logger.getLogger(Setup.class.getName());
+		PropertyConfigurator.configure(System.getProperty("user.dir") + "\\src\\config\\log4j.properties");
+	}
+	
+	// Paths
+	protected String path0 = "E:\\IndLanding\\IndFiNext\\src\\config\\log4j.properties";
+	
+	protected String path1 = "E:\\IndLanding\\IndFiNext\\src\\excel\\TechFinalUrls.xlsx";
+	
+	protected String path2 = "E:\\IndLanding\\IndFiNext\\src\\screens\\";
+	
+	protected String path3="E:\\IndLanding\\IndFiNext\\src\\excel\\FlexData.xlsx";
+	
+	protected String path4 ="E:\\IndLanding\\IndFiNext\\src\\excel\\AdminData.xlsx";
+	
+	protected String path5="E:\\IndLanding\\IndFiNext\\src\\excel\\TestData.xlsx";
+	
+
+	// DateBase
+	protected vivifi VV = new vivifi();
+	protected Customer Cx = new Customer();
+	protected CustomerIncome CI=new CustomerIncome();
+}
